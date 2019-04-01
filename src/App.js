@@ -2,38 +2,41 @@ import React, { Component } from "react";
 import MemeCard from "./components/MemeCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import friends from "./friends.json";
+import memes from "./memes.json";
 import Navbar from "./components/Navigation";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
   state = {
-    friends
+    memes
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+  changeMeme = (id) => {
+    console.log(id + " clicked");
+    if (memes[id].active) {
+      console.log("already true");
+    }
+    else {
+      console.log("before: " + memes[id].active);
+      memes[id].active = true
+      console.log("After: " + memes[id].active);
+      this.setState({ memes });
+    };
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
-      
+
       <Wrapper>
         <Navbar />
-        <Title>Friends List</Title>
-        {this.state.friends.map(friend => (
+        <Title>Don't forget the meme</Title>
+        {this.state.memes.map(meme => (
           <MemeCard
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            id={meme.id}
+            key={meme.id}
+            name={meme.name}
+            image={meme.image}
+            active={meme.active}
+            changeMeme={this.changeMeme}
           />
         ))}
       </Wrapper>

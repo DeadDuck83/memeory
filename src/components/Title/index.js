@@ -3,10 +3,10 @@ import "./style.css";
 
 function Title(props) {
   return (
-    <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4" />
+    <div className="jumbotron">
+      <h1 className="display-4">Don't forget to Meme</h1>
+      <p className="lead">A simple game to see how good your memory is by testing how well you remember which meme you click on. Click on all 12 without clicking on any one meme two times, you win!</p>
+      <hr className="my-4" />
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     </div>
 

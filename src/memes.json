@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "alien",
+    "image": "./images/aliens.jpg",
+    "active": false
+  },
+  {
+    "id": 2,
+    "name": "clever",
+    "image": "./images/clever.jpg",
+    "active": false
+  },
+  {
+    "id": 3,
+    "name": "confused",
+    "image": "./images/confused.jpg",
+    "active": false
+  },
+  {
+    "id": 4,
+    "name": "doTell",
+    "image": "./images/doTell.jpg",
+    "active": false
+  },
+  {
+    "id": 5,
+    "name": "drunkBaby",
+    "image": "./images/drunkBaby.jpg",
+    "active": false
+  },
+  {
+    "id": 6,
+    "name": "foreverAlone",
+    "image": "./images/foreverAlone.jpg",
+    "active": false
+  },
+  {
+    "id": 7,
+    "name": "goodGuy",
+    "image": "./images/goodGuy.jpg",
+    "active": false
+  },
+  {
+    "id": 8,
+    "name": "kermitBadKermit",
+    "image": "./images/kermitBadKermit.jpg",
+    "active": false
+  },
+  {
+    "id": 9,
+    "name": "obsessedGF",
+    "image": "./images/obsessedGF.jpg",
+    "active": false
+  },
+  {
+    "id": 10,
+    "name": "oneDoes",
+    "image": "./images/oneDoes.jpg",
+    "active": false
+  },
+  {
+    "id": 11,
+    "name": "CsadYao",
+    "image": "./images/sadYao.jpg",
+    "active": false
+  },
+  {
+    "id": 12,
+    "name": "success",
+    "image": "./images/success.jpg",
+    "active": false
+  }
+]

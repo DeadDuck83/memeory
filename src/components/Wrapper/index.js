@@ -4,9 +4,9 @@ import "./style.css";
 function Wrapper(props) {
 
   return (
-    <div class="liquid-container">
+    <div className="liquid-container">
       <div className="wrapper container">
-        <div class="row">
+        <div className="row">
           {props.children}
         </div>
       </div>

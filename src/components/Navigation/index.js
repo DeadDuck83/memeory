@@ -3,12 +3,12 @@ import "./style.css";
 
 function Navbar(props) {
     return (
-        <nav class="navbar fixed-top navbar-light bg-light">
-            <a class="navbar-brand" href="/">Fixed top</a>
-            <div class=" ">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <nav className="navbar fixed-top navbar-light bg-light">
+            <a className="navbar-brand" href="/">Fixed top</a>
+            <div className=" ">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/">Correctly guessed {props.name} <span className="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
