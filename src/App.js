@@ -7,27 +7,59 @@ import Navbar from "./components/Navigation";
 
 class App extends Component {
   state = {
-    memes
+    memes,
+    counter: 0
   };
 
   changeMeme = (id) => {
-    console.log(id + " clicked");
-    if (memes[id].active) {
-      console.log("already true");
+    console.log((id - 1) + " id clicked");
+    if (this.state.memes[id - 1].active) {
+      console.log("already true, start over");
+      this.setState({ memes, counter: 0 });
+
     }
     else {
-      console.log("before: " + memes[id].active);
-      memes[id].active = true
-      console.log("After: " + memes[id].active);
-      this.setState({ memes });
+      console.log("id: " + id);
+      this.scoreCounter(id);
+      
     };
+  };
+
+  scoreCounter = (id) => {
+    let newCounter = 0;
+    console.log("scoreCounter: " + id)
+    let tempMeme = this.state.memes;
+    console.log("tempMeme : ", tempMeme);
+    var x = memes.id(id).active
+
+    // use the json id to find update the value
+    tempMeme[id - 1].active = true;
+    console.log(
+      tempMeme[id - 1].active, 
+      tempMeme[id - 1]);
+    for (var i = 0; i < tempMeme.length; i++) {
+      if (tempMeme[i].active === true) {
+        newCounter++
+      } 
+    }
+    console.log("test: " + newCounter)
+    tempMeme = this.shuffle(tempMeme);
+    console.log("tempMeme", tempMeme);
+    this.setState({ memes: tempMeme, counter: newCounter });
+  }
+
+  shuffle = memes => {
+    let newmemes = memes.sort(() => Math.random() - 0.5);
+    return newmemes;
   };
 
   render() {
     return (
 
       <Wrapper>
-        <Navbar />
+        <Navbar
+          counter={this.state.counter}
+        />
         <Title>Don't forget the meme</Title>
         {this.state.memes.map(meme => (
           <MemeCard
