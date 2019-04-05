@@ -11,41 +11,23 @@ class App extends Component {
     counter: 0
   };
 
-  changeMeme = (id) => {
-    console.log((id - 1) + " id clicked");
-    if (this.state.memes[id - 1].active) {
-      console.log("already true, start over");
-      this.setState({ memes, counter: 0 });
+  changeMeme = (propName) => {
+// find the object using the id.
+console.log(propName);
+console.log(memes.propName);
+const result = memes.filter(meme => meme.name === propName);
+console.log(result);
 
+    if (result.active) {
+      this.setState({ memes, counter: 0 });
     }
     else {
-      console.log("id: " + id);
-      this.scoreCounter(id);
-      
+      this.scoreCounter(result);
     };
   };
 
-  scoreCounter = (id) => {
-    let newCounter = 0;
-    console.log("scoreCounter: " + id)
-    let tempMeme = this.state.memes;
-    console.log("tempMeme : ", tempMeme);
-    var x = memes.id(id).active
-
-    // use the json id to find update the value
-    tempMeme[id - 1].active = true;
-    console.log(
-      tempMeme[id - 1].active, 
-      tempMeme[id - 1]);
-    for (var i = 0; i < tempMeme.length; i++) {
-      if (tempMeme[i].active === true) {
-        newCounter++
-      } 
-    }
-    console.log("test: " + newCounter)
-    tempMeme = this.shuffle(tempMeme);
-    console.log("tempMeme", tempMeme);
-    this.setState({ memes: tempMeme, counter: newCounter });
+  scoreCounter = (propName) => {
+    this.setState({ memes });
   }
 
   shuffle = memes => {
