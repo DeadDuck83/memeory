@@ -26,7 +26,11 @@ console.log(result);
     };
   };
 
-  scoreCounter = (propName) => {
+  scoreCounter = (result) => {
+
+    // tempMeme = this.shuffle(tempMeme);
+    // console.log("tempMeme", tempMeme);
+    // this.setState({ memes: tempMeme, counter: newCounter });
     this.setState({ memes });
   }
 
@@ -43,6 +47,7 @@ console.log(result);
           counter={this.state.counter}
         />
         <Title>Don't forget the meme</Title>
+        {/* I need to shuffle the MemeCard before it first appears on the screen */}
         {this.state.memes.map(meme => (
           <MemeCard
             id={meme.id}
